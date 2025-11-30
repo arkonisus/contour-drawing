@@ -310,7 +310,7 @@ def render_contours(T, args):
     
     # Filter contours in place (exactly like original)
     filtered = 0
-    for coll in cs.collections:
+    for coll in cs.get_children():
         paths = coll.get_paths()
         long_paths = [p for p in paths if len(p.vertices) >= args.min]
         filtered += len(paths) - len(long_paths)
